@@ -2,17 +2,30 @@
 
 .add_product {
     width: 630px;
-    height: 387px;
+    min-height: 387px;
     border: 1px solid #000;
     background: #374050;
 }
+
+.product_header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .add_product .close {
     width: 30px;
     height: 30px;
     flex-shrink: 0;
 }
-.add_product .product_input, .add_product .title {
-    margin-left: 12px;
+
+.close {
+    margin-top: 18px;
+    margin-right: 5px;
+}
+
+.add_product {
+    padding-left: 12px;
+    margin: 0 auto;
 }
 
 .add_product .title {
@@ -35,7 +48,7 @@
     margin-bottom: 13px;
 }
 
-.product_title {
+.product_title, .attribute_title {
     color: #FFF;
     font-family: Roboto;
     font-size: 9px;
@@ -44,6 +57,15 @@
     line-height: 11px; /* 122.222% */
     margin-bottom: 8px;
 }
+
+.attribute_title {
+    font-size: 14px;
+}
+
+.attributes {
+    margin-top: 26px;
+}
+
 .add_product .product_input select {
     color: #000;
     font-family: Roboto;
@@ -53,4 +75,75 @@
     line-height: 11px; /* 100% */
 }
 
+.add_attribute {
+    color: #0FC5FF;
+    font-family: Roboto;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11px; /* 122.222% */
+    width: 84px;
+    border-bottom: 1px dashed #0FC5FF;
+}
+
+.attribute {
+    /* margin-bottom: 18px; */
+}
+
+select option {
+    width: 472px;
+    height: 90px !important;
+    flex-shrink: 0;
+}
+
+.btn {
+    width: 139px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #0FC5FF;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 11px; /* 100% */
+    margin-bottom: 41px;
+}
+
+.attribute_value {
+    margin-left: 11px;
+}
+
+.btn:hover, .add_attribute:hover {
+    cursor: pointer;
+}
+
+.product_input:last-of-type {
+    margin-bottom: 22px;
+}
+
+.product_input, .attribute {
+    display: flex;
+    flex-direction: column;
+}
+
+.attributes {
+    display: flex;
+
+}
+
+.product_input .attributes .attribute input {
+    width: 219px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.basket {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+    fill: rgba(196, 196, 196, 0.40);
+    margin-left: 10px;
+}
 /* .add_product  */
