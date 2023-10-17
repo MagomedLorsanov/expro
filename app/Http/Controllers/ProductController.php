@@ -30,10 +30,15 @@ class ProductController extends Controller
             ]
         ];
 
-        return view('index',compact('products'));
+        return view('index', compact('products'));
     }
 
-    public function store()
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store(Request $request)
     {
         // $request->validate([
         //     'name' => 'required|min:10',
@@ -42,5 +47,21 @@ class ProductController extends Controller
         //         'regex:/^[a-zA-Z0-9\s]+$/',
         //         Rule::unique('product')->ignore($request->id)]
         //     ]);
+    }
+
+    public function show($id)
+    {
+    }
+
+    public function edit($id)
+    {
+    }
+
+    public function update(Request $request, $id)
+    {
+    }
+
+    public function destroy($id)
+    {
     }
 }

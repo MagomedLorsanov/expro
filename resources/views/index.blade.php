@@ -25,5 +25,5 @@
             @endforeach
         </tbody>
 </table>
-
+<button type="button">добавить</button>
 @endsection
