@@ -7,6 +7,9 @@
     background: #374050;
 }
 
+input, select {
+    padding-left: 10px;
+}
 .product_header {
     display: flex;
     justify-content: space-between;
@@ -55,7 +58,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 11px; /* 122.222% */
-    margin-bottom: 8px;
+    margin-bottom: 12.5px;
 }
 
 .attribute_title {
@@ -76,14 +79,14 @@
 }
 
 .add_attribute {
-    color: #0FC5FF;
+    color: #5FC6F1;
     font-family: Roboto;
     font-size: 9px;
     font-style: normal;
     font-weight: 400;
     line-height: 11px; /* 122.222% */
     width: 84px;
-    border-bottom: 1px dashed #0FC5FF;
+    border-bottom: 1px dashed #5FC6F1;
 }
 
 .attribute {
@@ -115,7 +118,7 @@ select option {
     margin-left: 11px;
 }
 
-.btn:hover, .add_attribute:hover {
+.btn:hover, .add_attribute:hover, .basket:hover,.close:hover {
     cursor: pointer;
 }
 
@@ -361,30 +364,21 @@ tbody tr {
     display: flex;
 }
 
-.product-title {
+.product-title, .product-content, .attributes .attribute input {
     color: rgba(255, 255, 255, 0.70);
     font-family: Roboto;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
-    line-height: 11px; /* 100% */
+    line-height: 11px;
     width: 5%;
 }
 
 .product-content {
     color: #FFF;
-    font-family: Roboto;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 11px; /* 100% */
 }
 
 .attributes .attribute input {
     color: #000;
-    font-family: Roboto;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 13px; /* 118.182% */
+    line-height: 13px;
 }

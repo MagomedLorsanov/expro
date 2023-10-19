@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let count = 1;
     const inputContainer = document.getElementById("attributes_container");
-
+    const createModal = document.getElementById('ModalCreate');
     // remove attribute
     inputContainer.addEventListener('click', function (event) {
         let deleteAttrValue = event.target.classList.value;
@@ -34,5 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
         count++;
     });
 
+    document.querySelector(".btn_add").addEventListener("click", function(){
+        let modalClass = document.querySelector('.modal');
+        createModal.style.opacity = "1";
+        modalClass.style.display = "block";
+        modalClass.style.position = "unset";
+    })
     
+    document.querySelector(".close").addEventListener("click", function(){
+        let modalClass = document.querySelector('.modal');
+        modalClass.style.display = "none";
+    })
 });

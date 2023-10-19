@@ -35,18 +35,20 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('create');
+        return view('product.create');
     }
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required|min:10',
-        //     'article' => [
-        //         'required',
-        //         'regex:/^[a-zA-Z0-9\s]+$/',
-        //         Rule::unique('product')->ignore($request->id)]
-        //     ]);
+        $data = $request->validate([
+            'name' => 'required|min:10',
+            'article' => [
+                'required',
+                'regex:/^[a-zA-Z0-9\s]+$/',
+                // Rule::unique('product')->ignore($request->id)
+            ]
+        ]);
+        dd($data);
     }
 
     public function show($id)
@@ -100,7 +102,7 @@ class ProductController extends Controller
             ]
         ];
         $product = $products[0];
-        return view('edit',compact('product'));
+        return view('product.edit',compact('product'));
     }
 
     public function update(Request $request, $id)

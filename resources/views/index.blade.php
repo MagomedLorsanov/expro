@@ -29,7 +29,8 @@
             </tbody>
         </table>
         <div class="btn-container">
-            <button type="button">добавить</button>
+            <x-button class="btn_add" data-toggle="modal" data-target="#ModalCreate">Добавить</x-button>
         </div>
     </div>
+@include('product.create')
 @endsection
