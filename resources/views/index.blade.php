@@ -29,7 +29,7 @@
             </tbody>
         </table>
         <div class="btn-container">
-            <button type="button">добавить</button>
+            <button class="btn btn" type="button">добавить</button>
         </div>
     </div>
 @endsection
