@@ -7,6 +7,9 @@
     background: #374050;
 }
 
+input, select {
+    padding-left: 10px;
+}
 .product_header {
     display: flex;
     justify-content: space-between;
@@ -55,7 +58,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 11px; /* 122.222% */
-    margin-bottom: 8px;
+    margin-bottom: 12.5px;
 }
 
 .attribute_title {
@@ -76,14 +79,14 @@
 }
 
 .add_attribute {
-    color: #0FC5FF;
+    color: #5FC6F1;
     font-family: Roboto;
     font-size: 9px;
     font-style: normal;
     font-weight: 400;
     line-height: 11px; /* 122.222% */
     width: 84px;
-    border-bottom: 1px dashed #0FC5FF;
+    border-bottom: 1px dashed #5FC6F1;
 }
 
 .attribute {
@@ -96,26 +99,11 @@ select option {
     flex-shrink: 0;
 }
 
-.btn {
-    width: 139px;
-    height: 30px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #0FC5FF;
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 11px; /* 100% */
-    margin-bottom: 41px;
-}
-
 .attribute_value {
     margin-left: 11px;
 }
 
-.btn:hover, .add_attribute:hover {
+.btn:hover, .add_attribute:hover, .basket:hover,.close:hover, tr:hover, .admin-tools img:hover {
     cursor: pointer;
 }
 
@@ -141,10 +129,12 @@ select option {
 
 .basket {
     width: 10px;
-    height: 11px;
+    display: flex;
     flex-shrink: 0;
     fill: rgba(196, 196, 196, 0.40);
     margin-left: 10px;
+    margin-top: 9.5px;
+    align-content: center;
 }
 
 body {
@@ -214,7 +204,7 @@ header {
 
 .item-name {
     height: inherit;
-    padding-top: 19.5px;
+    padding: 20px 0;
     margin-left: 17px;
     color: #ED1C24;
     border-bottom: 3px solid #ED1C24;
@@ -275,7 +265,7 @@ background: #FFF;
 }
 
 thead tr th:first-child, tbody tr td:first-child {
-    text-align: center;
+    padding-left: 18px;
 }
 tbody tr {
     height: 52px;
@@ -327,6 +317,26 @@ tbody tr {
     margin: 0 auto;
 }
 
+.admin-tools img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.admin-tools a {
+    display: flex;
+}
+
+.admin-tools .edit-icon{
+    background: rgba(0, 0, 0, 0.40);
+    margin-right: 2px;
+}
+.admin-tools {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
 .product-name {
     display: contents;
     color: #FFF;
@@ -361,30 +371,52 @@ tbody tr {
     display: flex;
 }
 
-.product-title {
+.product-title, .product-content, .attributes .attribute input {
     color: rgba(255, 255, 255, 0.70);
     font-family: Roboto;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
-    line-height: 11px; /* 100% */
+    line-height: 11px;
     width: 5%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 .product-content {
     color: #FFF;
-    font-family: Roboto;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 11px; /* 100% */
+    width: 70%;
 }
 
 .attributes .attribute input {
     color: #000;
+    line-height: 13px;
+}
+
+nav {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.navbar-brand {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.btn-t {
+    width: 139px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #0FC5FF;
+    color: #FFF;
     font-family: Roboto;
     font-size: 11px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 13px; /* 118.182% */
+    font-weight: 500;
+    line-height: 11px; /* 100% */
+    margin-bottom: 41px;
 }
