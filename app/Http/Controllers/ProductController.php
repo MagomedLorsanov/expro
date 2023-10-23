@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 
 class ProductController extends Controller
@@ -22,21 +21,26 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        
-        $request->validate(Product::rule($request));
         $values = $request['values'];
         $data = [];
-        if($values) {
-            foreach($request['keys'] as $index =>$key){
+        if ($values) {
+            foreach ($request['keys'] as $index => $key) {
                 $data[$key] = $values[$index];
             }
         }
         $jsonData = json_encode($data);
+
+        $request->validate(Product::rule($request));
+
+
+
+        
         $product = [
             'article' => $request->article,
             'name' => $request->name,
             'status' => $request->status,
-            'data' => $jsonData];
+            'data' => $jsonData
+        ];
 
         $products = Product::create($product);
         return redirect('products');
@@ -45,37 +49,37 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('product.show',compact('product'));
+        return view('product.show', compact('product'));
     }
 
     public function edit($id)
     {
-        if(auth()->check() && auth()->user()->is_admin == true) {
+        if (auth()->check() && auth()->user()->is_admin == true) {
             $is_admin = true;
-        }else {
+        } else {
             $is_admin = false;
-        }   
-        
+        }
+
         $product = Product::find($id);
-        return view('product.edit',compact('product','is_admin'));
+        return view('product.edit', compact('product', 'is_admin'));
     }
 
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $request->validate(Product::rule($request->all(),$id));
+        $request->validate(Product::rule($request->all(), $id));
         $request = $request->all();
 
-        $values = isset($request['values']) ? $request['values']:'';
+        $values = isset($request['values']) ? $request['values'] : '';
         $data = [];
 
-        if($values) {
-            foreach($request['keys'] as $index =>$key){
+        if ($values) {
+            foreach ($request['keys'] as $index => $key) {
                 $data[$key] = $values[$index];
             }
         }
         $jsonData = json_encode($data);
-        
+
         $product = Product::find($id);
         $product->article = $request['article'];
         $product->name = $request['name'];

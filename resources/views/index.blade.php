@@ -12,8 +12,8 @@
                 </tr>
             </thead>
             <tbody>
-                @if (empty($products))
-                    <h4 class="product">No product is available</h4>
+                @if (count($products) == 0)
+                <tr ><td colspan='4'>No product is available</td></tr> 
                 @endif 
                 @foreach ($products as $product)
                         <tr id="{{ $product['id'] }}" class = "product" onclick="window.location='{{ route('product.show',  $product['id']) }}'">

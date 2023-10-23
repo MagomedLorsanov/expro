@@ -19,7 +19,7 @@ class Product extends Model
         $query->where('status', 'available');
     }
 
-    public static function rule($request,$id='') {
+    public static function rule($request, $id=''): array {
         $product_id = $id ? $id:$request->id;
         return [
             'article' => ['required','regex:/^[a-zA-Z0-9\s]+$/',Rule::unique('products')->ignore($product_id)],

@@ -20,20 +20,20 @@
                 <x-text-input type="text" name="article" value="{{ $product['article'] }}" readonly/>
                 @endif
                 @error('article')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    <span class="alert p-0 fs-6 text-danger" role="alert">
+                        {!! $message !!} 
                     </span>
-                @enderror
+                    @enderror
             </div>
 
             <div class='product_input'>
                 <x-input-label required>Название</x-input-label>
                 <x-text-input type="text" name="name" value="{{ $product['name'] }}" />
                 @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    <span class="alert p-0 fs-6 text-danger" role="alert">
+                        <strong>{!! $message !!}</strong>
                     </span>
-                @enderror
+                    @enderror
             </div>
 
             <div class='product_input'>
